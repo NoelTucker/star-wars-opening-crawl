@@ -19,9 +19,18 @@ body{
 
 a{
 	color: #1caeed;
-	font-size: 4em;
-	text-transform: uppercase;
-	filter: blur(0.004em);
+	font-size: 2em;
+	display: block;
+	text-decoration: none;
+	filter: blur(0.008em);
+}
+
+a:hover{
+	filter: blur(0.008em) brightness(120%);
+}
+
+a:active{
+	filter: blur(0.008em) brightness(80%);
 }
 
 .active{
