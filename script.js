@@ -1,9 +1,10 @@
 const start = document.querySelector('#start');
-const startPage = document.querySelector('.container:first-of-type');
+const links = document.querySelectorAll('a');
 const audio = document.querySelector('audio');
 
 start.addEventListener('click', () => {
-	startPage.setAttribute('hidden', '');
+	start.setAttribute('hidden', '');
+	links.setAttribute('hidden', '');
 	document.body.classList.add('active');
 	audio.play();
 	setTimeout(() => {
