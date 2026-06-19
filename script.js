@@ -4,7 +4,9 @@ const audio = document.querySelector('audio');
 
 start.addEventListener('click', () => {
 	start.setAttribute('hidden', '');
-	links.setAttribute('hidden', '');
+	for (link of links){
+		link.setAttribute('hidden', '');
+	}
 	document.body.classList.add('active');
 	audio.play();
 	setTimeout(() => {
