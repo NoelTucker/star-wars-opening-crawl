@@ -1,8 +1,9 @@
-const start = document.getElementById('start');
-const audio = document.getElementById('audio');
+const start = document.querySelector('#start');
+const startPage = document.querySelector('.container:first-of-type');
+const audio = document.querySelector('audio');
 
 start.addEventListener('click', () => {
-	start.setAttribute('hidden', '');
+	startPage.setAttribute('hidden', '');
 	document.body.classList.add('active');
 	audio.play();
 	setTimeout(() => {
