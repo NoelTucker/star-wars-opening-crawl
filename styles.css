@@ -1,0 +1,188 @@
+@font-face{
+	font-family: 'Trade Gothic';
+	src: url('Trade Gothic Bold No. 2.otf');
+}
+
+@font-face{
+	font-family: 'News Flash';
+	src: url('News Flash Extra Condensed.otf');
+}
+
+body{
+	margin: 0;
+	overflow: hidden;
+	background: url('star-field.jpg') center / cover no-repeat fixed #000000;
+	font-family: 'Trade Gothic', sans-serif;
+	pointer-events: none;
+	user-select: none;
+}
+
+.active{
+	.container:first-of-type,
+	#intro,
+	#logo,
+	#text-crawl{
+		animation-play-state: running;
+	}
+}
+
+.container{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.nowrap{
+	white-space: nowrap;
+}
+
+/* Start screen */
+.container:first-of-type{
+	background-color: #000000;
+	animation: 87s linear 9s paused background;
+}
+
+#start{
+	align-self: center;
+	color: #1caeed;
+	background: none;
+	border: none;
+	font-family: 'News Flash', sans-serif;
+	font-size: 8em;
+	text-transform: uppercase;
+	pointer-events: auto;
+	user-select: auto;
+	cursor: pointer;
+	filter: blur(0.004em);
+}
+
+#start:hover{
+	filter: blur(0.004em) brightness(120%);
+}
+
+#start:active{
+	filter: blur(0.004em) brightness(80%);
+}
+
+/* A long time ago . . . */
+#intro{
+	opacity: 0;
+	width: 14.1em;
+	align-self: center;
+	color: #1caeed;
+	font-size: 5.9em;
+	text-align: justify;
+	letter-spacing: -0.02em;
+	line-height: 1.3em;
+	filter: blur(0.01em);
+	animation: 6s linear 1s paused intro;
+}
+
+/* Star Wars logo */
+#logo{
+	opacity: 0;
+	align-self: center;
+	animation: 15s cubic-bezier(0, 0, 0, 1) 9s paused logo;
+}
+
+/* Text crawl */
+.container:last-of-type{
+	transform: perspective(48em) rotateX(63deg);
+}
+
+#text-crawl{
+	opacity: 0;
+	width: 13em;
+	align-self: end;
+	color: #ebaf0b;
+	font-size: 4em;
+	mask-size: 100% 400%;
+	mask-image: linear-gradient(transparent 25%, #000000 75%);
+	animation: 89s linear 4s paused text-crawl;
+}
+
+#episode{
+	margin-bottom: 1em;
+	text-align: center;
+	filter: blur(0.008em);
+}
+
+h1{
+	margin-bottom: 1em;
+	font-family: 'News Flash', sans-serif;
+	font-size: 1.1em;
+	font-weight: 100;
+	text-align: center;
+	text-transform: uppercase;
+	-webkit-text-stroke-width: 0.02em;
+	letter-spacing: 0.03em;
+	transform: scale(2);
+	filter: blur(0.004em);
+}
+
+p{
+	margin-bottom: 1.5em;
+	text-align: justify;
+	text-justify: inter-character;
+	word-spacing: 0.14em;
+	line-height: 1.2em;
+	filter: blur(0.008em);
+}
+
+/* Keyframes */
+@keyframes background{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+@keyframes intro{
+	0%{
+		opacity: 0;
+	}
+	20%{
+		opacity: 1;
+	}
+	90%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+@keyframes logo{
+	0%{
+		opacity: 1;
+		transform: scale(4);
+	}
+	80%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+		transform: scale(0);
+	}
+}
+
+@keyframes text-crawl{
+	0%{
+		opacity: 1;
+		mask-position: bottom;
+		transform: translate(0, 117%);
+	}
+	85%{
+		opacity: 1;
+		mask-position: bottom;
+	}
+	100%{
+		opacity: 1;
+		mask-position: top;
+		transform: translate(0, -25%);
+	}
+}
