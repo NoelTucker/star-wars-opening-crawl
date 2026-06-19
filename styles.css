@@ -17,6 +17,13 @@ body{
 	user-select: none;
 }
 
+a{
+	color: #1caeed;
+	font-size: 4em;
+	text-transform: uppercase;
+	filter: blur(0.004em);
+}
+
 .active{
 	.container:first-of-type,
 	#intro,
@@ -40,20 +47,20 @@ body{
 
 /* Start screen */
 .container:first-of-type{
+	align-items: center;
 	background-color: #000000;
+	pointer-events: auto;
+	user-select: auto;
 	animation: 87s linear 9s paused background;
 }
 
 #start{
-	align-self: center;
 	color: #1caeed;
 	background: none;
 	border: none;
 	font-family: 'News Flash', sans-serif;
 	font-size: 8em;
 	text-transform: uppercase;
-	pointer-events: auto;
-	user-select: auto;
 	cursor: pointer;
 	filter: blur(0.004em);
 }
